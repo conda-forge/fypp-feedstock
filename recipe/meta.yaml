@@ -1,5 +1,5 @@
 {% set name = "fypp" %}
-{% set version = "2.1.1" %}
+{% set version = "3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a0dad193bce4420927953dbd2068cb9fbfdb0bc0a161bafca366b1ed87cb954c
+  sha256: 157f3d22d78f5869dea85712a469eaf087c46febd2e36135bdbca60c15034f54
 
 build:
   noarch: python
