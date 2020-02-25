@@ -22,10 +22,13 @@ requirements:
     - pip
   run:
     - python
+    - pip
 
 test:
   commands:
     - fypp --help
+  commands:
+    - pip check
 
 about:
   home: https://github.com/aradi/fypp
