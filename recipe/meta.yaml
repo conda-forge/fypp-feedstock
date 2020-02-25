@@ -26,6 +26,8 @@ requirements:
 test:
   commands:
     - fypp --help
+  commands:
+    - pip check
 
 about:
   home: https://github.com/aradi/fypp
