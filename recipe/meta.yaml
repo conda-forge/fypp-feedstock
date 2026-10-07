@@ -23,14 +23,19 @@ requirements:
     - hatchling
   run:
     - python >={{ python_min }}
-    - pip
 
 test:
+  source_files:
+    - test/
   requires:
     - python {{ python_min }}
+    - pip
+  imports:
+    - fypp
   commands:
     - fypp --help
     - pip check
+    - cd test && python -m unittest discover -v
 
 about:
   home: https://github.com/aradi/fypp
