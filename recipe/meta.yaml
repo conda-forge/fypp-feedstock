@@ -36,7 +36,7 @@ about:
   home: https://github.com/aradi/fypp
   license: BSD-2-Clause
   license_family: BSD
-  license_file: LICENSE.txt
+  license_file: LICENSE
   summary: 'Python powered Fortran preprocessor'
 
   description: |
