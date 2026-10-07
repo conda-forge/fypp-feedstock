@@ -1,17 +1,17 @@
 {% set name = "fypp" %}
-{% set version = "3.2" %}
+{% set version = "3.3" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 05c20f71dd9a7206ffe2d8688032723f97b8c2984d472ba045819d7d2b513bce
+  sha256: 14bb98c370873624c0a5e53bcf30f6ef0e1a3885e0f0cc714774c745ed8543f1
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - fypp = fypp:run_fypp
@@ -20,24 +20,28 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - hatchling
   run:
     - python >={{ python_min }}
-    - pip
 
 test:
+  source_files:
+    - test/
   requires:
     - python {{ python_min }}
+    - pip
+  imports:
+    - fypp
   commands:
     - fypp --help
-  commands:
     - pip check
+    - cd test && python -m unittest discover -v
 
 about:
   home: https://github.com/aradi/fypp
   license: BSD-2-Clause
   license_family: BSD
-  license_file: LICENSE.txt
+  license_file: LICENSE
   summary: 'Python powered Fortran preprocessor'
 
   description: |
